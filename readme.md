@@ -25,35 +25,35 @@ yarn run deploy
 
 ## Fork this repo or follow these steps
 
-* Make a new project folder and cd in
+1. Make a new project folder and cd in
 
-* Run `yarn init`
+2. Run `yarn init`
 
-* Add React and ReactDOM
+3. Add React and ReactDOM
 ```
 yarn add react react-dom
 ```
 
-* Create a file in root called `.gitignore`, and add the following:
+4. Create a file in root called `.gitignore`, and add the following:
 ```
 node_modules
 dist
 .DS_store
 ```
 
-* Create an `app` folder inside root and add `index.css` and `index.js`
+5. Create an `app` folder inside root and add `index.css` and `index.js`
 
-* Create a `components` folder inside the `app` folder
+6. Create a `components` folder inside the `app` folder
 
-* Create an `App.js` file inside the `components` folder
+7. Create an `App.js` file inside the `components` folder
 
-* Require React and React-DOM in `App.js`
+8. Require React and React-DOM in `App.js`
 ```
 var React = require('react');
 var ReactDOM = require('react-dom');
 ```
 
-* Create an App component in `App.js`
+9. Create an App component in `App.js`
 ```
 class App extends React.Component {
   render() {
@@ -66,12 +66,12 @@ class App extends React.Component {
 }
 ```
 
-* Export App
+10. Export App
 ```
 module.exports = App;
 ```
 
-* Require React, React-DOM, App, and css in `index.js`
+11. Require React, React-DOM, App, and css in `index.js`
 ```
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -79,7 +79,7 @@ var App = require('./components/App');
 require('./index.css');
 ```
 
-* Render the component to the DOM.
+12. Render the component to the DOM.
 ```
 ReactDOM.render(
   <App />,
@@ -87,19 +87,19 @@ ReactDOM.render(
 );
 ```
 
-* Add some font control to index.css
+13. Add some font control to `index.css`
 ```
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
 ```
 
-* Add Webpack and Babel to your project.
+14. Add Webpack and Babel to your project.
 ```
 yarn add --dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader html-webpack-plugin webpack webpack-dev-server
 ```
 
-* Create a `webpack.config.js` file in root, and add the config.
+15. Create a `webpack.config.js` file in root, and add the config.
 ```
 var path = require('path');
 var webpack = require('webpack');
@@ -141,19 +141,19 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = config;
 ```
 
-* Add babel presents to `package.json`
+16. Add babel presents to `package.json`
 ```
 "babel": {
   "presets": ["env", "react"]
 },
 ```
 
-* Create a `index.html` file in the app folder. Include html boilerplate and a div for the app.
+17. Create a `index.html` file in the app folder. Include html boilerplate and a div for the app.
 ```
 <div id="app"></div>
 ```
 
-* Add the following scripts to `package.json`
+18. Add the following scripts to `package.json`
 ```
 "scripts": {
   "start": "webpack-dev-server --open",
@@ -163,7 +163,7 @@ module.exports = config;
 },
 ```
 
-* Add firebase tools
+19. Add firebase tools
 ```
 yarn add -dev firebase-tools
 ```
