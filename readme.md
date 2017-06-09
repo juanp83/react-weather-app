@@ -1,4 +1,4 @@
-# React Create Project Checklist
+# React Project Starter
 
 ## Built-in commands
 
@@ -23,7 +23,7 @@ yarn run deploy
 ```
 
 
-## Fork this repo or follow these steps
+## Checklist
 
 1. Make a new project folder and cd in
 
