@@ -4,13 +4,16 @@
   "description": "gooWee's generic React template",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "NODE_ENV='production' webpack -p",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "yarn run build && firebase deploy"
   },
   "babel": {
     "presets": ["env", "react"]
   },
   "author": "gooWee",
-  "license": "MIT",
+  "license": "",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
