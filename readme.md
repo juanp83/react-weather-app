@@ -1,23 +1,7 @@
 # React Project Starter
 
-Duplicate as a new repo, or build from scratch using checklist below.
+Duplicate as a new repo, or build from scratch. Instructions below...
 
-To duplicate:
-
-Create a new repo on github, then clone the template.
-
-```
-git clone --bare git@github.com:gooWee/react-template.git
-```
-```
-git push --mirror [new repo]
-```
-```
-cd..
-```
-```
-git clone [new repo]
-```
 
 ## Built-in commands
 
@@ -42,7 +26,25 @@ yarn run deploy
 ```
 
 
-## From-scratch checklist
+## Duplicate
+
+Create a new repo on github, then clone the template.
+
+```
+git clone --bare git@github.com:gooWee/react-template.git
+```
+```
+git push --mirror [new repo]
+```
+```
+cd..
+```
+```
+git clone [new repo]
+```
+
+
+## Build from scratch
 
 1. Make a new project folder and cd in
 
