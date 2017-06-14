@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 class LocationInput extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class LocationInput extends React.Component {
   }
 
   handleChange(e){
-    let location = this.target.value;
+    let location = e.target.value;
     this.setState(() => {
       return {
         location: location
@@ -20,13 +21,9 @@ class LocationInput extends React.Component {
     })
   }
 
-  handleSubmit(){
-    event.preventDefault();
-  }
-
   render() {
     return (
-      <form className = "form-inline" onSubmit={this.handleSubmit}>
+      <form className = "form-inline">
         <input
           className = "form-control input"
           type = 'text'
@@ -34,10 +31,16 @@ class LocationInput extends React.Component {
           onChange = {this.handleChange}
           value = {this.state.location}
         />
-        <button
+
+        <Link
           className='btn btn-success button'
-          type='submit'
-          >Get Weather</button>
+          disabled= {!this.state.location}
+          to={{
+            pathname: '/forecast',
+            search: '?location=' + this.state.location
+          }}>
+            Get Weather
+        </Link>
       </form>
     );
   }
