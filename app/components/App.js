@@ -15,13 +15,13 @@ class App extends React.Component {
       <Router>
         <div className='container'>
           <Header />
-          <switch>
+          <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/forecast' component={Forecast} />
             <Route render={ () => {
               return <p>Page Not Found</p>
             }}/>
-          </switch>
+          </Switch>
         </div>
       </Router>
     )
