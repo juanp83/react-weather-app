@@ -37,9 +37,9 @@ class LocationInput extends React.Component {
           disabled= {!this.state.location}
           to={{
             pathname: '/forecast',
-            search: '?location=' + this.state.location
+            search: '?city=' + this.state.location
           }}>
-            Get Weather
+            Get Forecast
         </Link>
       </form>
     );
