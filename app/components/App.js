@@ -2,6 +2,7 @@ import React from 'react';
 import LocationInput from './LocationInput'
 import Forecast from './Forecast'
 import Home from './Home';
+import {Link} from 'react-router-dom';
 
 import {
   BrowserRouter as Router,
@@ -31,7 +32,9 @@ class App extends React.Component {
 const Header = () => {
     return (
       <div className='header'>
-        <h1>Local Weather</h1>
+        <Link
+          to={{pathname: '/'}}
+          ><h1>Local Weather</h1></Link>
         <LocationInput/>
       </div>
     )

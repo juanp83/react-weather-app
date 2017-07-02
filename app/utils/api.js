@@ -1,9 +1,25 @@
 import axios from 'axios'
 
-const key = '3a1a38e349673e2cd1b16e9944aa4962';
-const current = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&type=accurate&APPID=' + key;
-const forecast = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&type=accurate&APPID=' + key + '&cnt=5';
+let key = '3a1a38e349673e2cd1b16e9944aa4962';
 
 module.exports = {
+
+  fetchCurrentWeather: (lat, long) => {
+    let encodedURI = window.encodeURI('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&type=accurate&APPID=' + key + '&cnt=5&units=imperial')
+
+    return axios.get(encodedURI)
+      .then((response) => {
+        return response.data;
+      });
+  },
+
+  fetchForecast: (city) => {
+    let encodedURI = window.encodeURI('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&type=accurate&APPID=' + key + '&cnt=5&units=imperial')
+
+    return axios.get(encodedURI)
+      .then((response) => {
+        return response.data.list;
+      });
+  }
 
 }
