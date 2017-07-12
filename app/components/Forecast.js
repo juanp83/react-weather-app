@@ -1,6 +1,8 @@
 import React from 'react';
 import api from '../utils/api';
 import queryString from 'query-string';
+import PropTypes from 'prop-types';
+import images from '../utils/images';
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -40,16 +42,16 @@ class Forecast extends React.Component {
     return (
       <div>
         {!this.state.forecast ? <div className="sk-cube-grid">
-  <div className="sk-cube sk-cube1"></div>
-  <div className="sk-cube sk-cube2"></div>
-  <div className="sk-cube sk-cube3"></div>
-  <div className="sk-cube sk-cube4"></div>
-  <div className="sk-cube sk-cube5"></div>
-  <div className="sk-cube sk-cube6"></div>
-  <div className="sk-cube sk-cube7"></div>
-  <div className="sk-cube sk-cube8"></div>
-  <div className="sk-cube sk-cube9"></div>
-</div> : <Days location={this.state.location} forecast={this.state.forecast}/>}
+          <div className="sk-cube sk-cube1"></div>
+          <div className="sk-cube sk-cube2"></div>
+          <div className="sk-cube sk-cube3"></div>
+          <div className="sk-cube sk-cube4"></div>
+          <div className="sk-cube sk-cube5"></div>
+          <div className="sk-cube sk-cube6"></div>
+          <div className="sk-cube sk-cube7"></div>
+          <div className="sk-cube sk-cube8"></div>
+          <div className="sk-cube sk-cube9"></div>
+          </div> : <Days location={this.state.location} forecast={this.state.forecast}/>}
       </div>
     )
   }
@@ -59,8 +61,8 @@ const Days = (props) => {
   let forecast = props.forecast;
   let d = new Date();
   let today = d.getDay();
-  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-  console.log(forecast);
+  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
   return (
     <div>
       <h2 className="days-header text-center">{props.location}</h2>
@@ -72,12 +74,13 @@ const Days = (props) => {
           } else {
             today++
           }
+          let imgSrc = images[day.weather[0].icon];
           return (
             <li className='day card card-2'
               key={days[today]}
               >
                 <h2>{days[today]}</h2>
-                <img src={'app/images/' + day.weather[0].icon + '.svg'}/>
+                <img src={imgSrc}/>
                 <p>{day.weather[0].description}</p>
                 <p>Temp: {day.temp.day}℉</p>
                 <p>Humidity: {day.humidity}%</p>
@@ -89,6 +92,11 @@ const Days = (props) => {
       </ul>
     </div>
   )
+}
+
+Days.propTypes = {
+  forecast: PropTypes.array.isRequired,
+  location: PropTypes.string.isRequired
 }
 
 module.exports = Forecast;

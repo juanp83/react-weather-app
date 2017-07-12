@@ -1,6 +1,8 @@
 import React from 'react';
 import LocationInput from './LocationInput';
 import api from '../utils/api';
+import PropTypes from 'prop-types';
+import images from '../utils/images';
 
 class Home extends React.Component {
 
@@ -50,13 +52,13 @@ class Home extends React.Component {
 }
 
 const Current = (props) => {
-  console.log(props.weather)
+  let imgSrc = images[props.weather.weather[0].icon];
   return (
     <div className='current card card-2'>
       <h2 className="text-center">{props.weather.name}</h2>
       <ul className='day-list'>
         <li>
-          <img src={'app/images/' + props.weather.weather[0].icon + '.svg'}/>
+          <img src={imgSrc}/>
           <p>{props.weather.weather[0].description}</p>
           <p>Temp: {props.weather.main.temp}℉</p>
           <p>Humidity: {props.weather.main.humidity}%</p>
@@ -65,6 +67,10 @@ const Current = (props) => {
       </ul>
     </div>
   )
+}
+
+Current.propTypes = {
+  weather: PropTypes.object.isRequired
 }
 
 module.exports = Home;
