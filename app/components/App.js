@@ -1,6 +1,6 @@
 import React from 'react';
-import LocationInput from './LocationInput'
-import Forecast from './Forecast'
+import LocationInput from './LocationInput';
+import Forecast from './Forecast';
 import Home from './Home';
 import {Link} from 'react-router-dom';
 

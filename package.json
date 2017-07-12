@@ -19,6 +19,9 @@
   "license": "",
   "dependencies": {
     "axios": "^0.16.2",
+    "file-loader": "^0.11.2",
+    "firebase-tools": "^3.9.1",
+    "prop-types": "^15.5.10",
     "querystring": "^0.2.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
